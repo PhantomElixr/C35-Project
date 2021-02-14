@@ -23,15 +23,17 @@ function setup() {
 
 function draw() {
   background(backgroundImage);  
-
+  text("Use arrow keys to move balloon.",100,100);
   if(keyDown(DOWN_ARROW)){
     writePosition(0,1);
+    balloon.scale = balloon.scale - 0.1; 
   }else if(keyDown(RIGHT_ARROW)){
     writePosition(1,0);
   }else if(keyDown(UP_ARROW)){
     writePosition(0,-1);
+    balloon.scale = balloon.scale + 0.1;
   }else if(keyDown(LEFT_ARROW)){
-    writePosition(-1,0)
+    writePosition(-1,0);
   }
   drawSprites();
 }
